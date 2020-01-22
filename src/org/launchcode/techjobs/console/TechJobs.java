@@ -115,12 +115,20 @@ public class TechJobs {
 
         for(HashMap<String, String> job : someJobs){
 
-            System.out.println("*****");
-            for(String key : job.keySet()){
-                String value = job.get(key);
-                System.out.println(key + ": " + value);
+            if(someJobs.size() < 1){
+                System.out.println("There are no jobs available at this time. Please check back!");
+            } else {
+                System.out.println("*****");
+
+                for(String key : job.keySet()){
+                    String value = job.get(key);
+                    System.out.println(key + ": " + value);
+                }
+
+                System.out.println("***** \n");
             }
-            System.out.println("***** \n");
+
+
         }
 
     }
