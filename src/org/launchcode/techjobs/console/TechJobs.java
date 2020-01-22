@@ -67,7 +67,7 @@ public class TechJobs {
                     ArrayList<HashMap<String, String>> searchResults = JobData.findByColumnAndValue(searchField, searchTerm);
 
                     if(searchResults.isEmpty()){
-                        System.out.println("WRONG!");
+                        System.out.println("There are no results for that search term. Please check back!");
                     }
 
                     printJobs(searchResults);
