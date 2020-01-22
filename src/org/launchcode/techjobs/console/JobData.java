@@ -3,6 +3,7 @@ package org.launchcode.techjobs.console;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.w3c.dom.ls.LSOutput;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,6 +20,7 @@ public class JobData {
     private static final String DATA_FILE = "resources/job_data.csv";
     private static Boolean isDataLoaded = false;
 
+    //MY NOTES: all jobs are being stored in allJobs
     private static ArrayList<HashMap<String, String>> allJobs;
 
     /**
@@ -35,9 +37,12 @@ public class JobData {
 
         ArrayList<String> values = new ArrayList<>();
 
+        //MY NOTES: for every row in allJobs(the map that contains all jobs), I want to get a field
+        //field will give you the one data piece that is asked for (position, employer, location, etc)
         for (HashMap<String, String> row : allJobs) {
             String aValue = row.get(field);
 
+            //MY NOTES: if values ArrayList does not contain aValue, add it
             if (!values.contains(aValue)) {
                 values.add(aValue);
             }
@@ -70,6 +75,7 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
+        //MY NOTES: create a new arraylist of hashmaps
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
@@ -124,5 +130,6 @@ public class JobData {
             e.printStackTrace();
         }
     }
+
 
 }
