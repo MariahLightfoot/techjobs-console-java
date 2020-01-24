@@ -140,7 +140,8 @@ public class JobData {
         //results that match search term will be stored here
         ArrayList<HashMap<String, String>> jobsThatMatchSearchResults = new ArrayList<>();
 
-        //loop through allJobs and look for a match with searchTerm
+        //loop through allJobs
+        // look at values for a match with searchTerm
         for (HashMap<String, String> job : allJobs){
 
             for(String value : job.values()){
@@ -148,16 +149,18 @@ public class JobData {
                 if(value.contains(searchTerm) && !jobsThatMatchSearchResults.contains(job)){
 
                     jobsThatMatchSearchResults.add(job);
-                    System.out.println(jobsThatMatchSearchResults);
 
                 }
+//                if(jobsThatMatchSearchResults.isEmpty()){
+//                    System.out.println("EMPTY!");
+//                }
+
+
 
             }
-
 
         }
 
         return jobsThatMatchSearchResults;
-
     }
 }
