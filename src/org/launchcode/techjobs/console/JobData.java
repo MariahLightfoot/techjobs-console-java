@@ -130,4 +130,34 @@ public class JobData {
             e.printStackTrace();
         }
     }
+
+    public static ArrayList<HashMap<String, String>> findByValue(String searchTerm){
+
+        // load data, if not already loaded
+        //thinking this will populate allJobs for me to loop through
+        loadData();
+
+        //results that match search term will be stored here
+        ArrayList<HashMap<String, String>> jobsThatMatchSearchResults = new ArrayList<>();
+
+        //loop through allJobs and look for a match with searchTerm
+        for (HashMap<String, String> job : allJobs){
+
+            for(String value : job.values()){
+
+                if(value.contains(searchTerm) && !jobsThatMatchSearchResults.contains(job)){
+
+                    jobsThatMatchSearchResults.add(job);
+                    System.out.println(jobsThatMatchSearchResults);
+
+                }
+
+            }
+
+
+        }
+
+        return jobsThatMatchSearchResults;
+
+    }
 }

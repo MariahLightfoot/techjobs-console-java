@@ -62,7 +62,7 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
-                    System.out.println("Search all fields not yet implemented.");
+                    JobData.findByValue(searchTerm);
                 } else {
                     ArrayList<HashMap<String, String>> searchResults = JobData.findByColumnAndValue(searchField, searchTerm);
 
