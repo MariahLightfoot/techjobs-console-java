@@ -148,8 +148,6 @@ public class JobData {
 
                 if (value.contains(searchTerm) && !jobsThatMatchSearchResults.contains(job)) {
                     jobsThatMatchSearchResults.add(job);
-                } else {
-                    jobsThatMatchSearchResults = null;
                 }
 
             }
