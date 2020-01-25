@@ -123,7 +123,6 @@ public class TechJobs {
     }
 
     // Print a list of jobs
-    //MY NOTES: printJobs creates an arraylist of hashmaps named someJobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
         for(HashMap<String, String> job : someJobs){

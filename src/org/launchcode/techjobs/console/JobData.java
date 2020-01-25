@@ -20,7 +20,6 @@ public class JobData {
     private static final String DATA_FILE = "resources/job_data.csv";
     private static Boolean isDataLoaded = false;
 
-    //MY NOTES: all jobs are being stored in allJobs
     private static ArrayList<HashMap<String, String>> allJobs;
 
     /**
@@ -37,12 +36,10 @@ public class JobData {
 
         ArrayList<String> values = new ArrayList<>();
 
-        //MY NOTES: for every row in allJobs(the map that contains all jobs), I want to get a field
         //field will give you the one data piece that is asked for (position, employer, location, etc)
         for (HashMap<String, String> row : allJobs) {
             String aValue = row.get(field);
 
-            //MY NOTES: if values ArrayList does not contain aValue, add it
             if (!values.contains(aValue)) {
                 values.add(aValue);
             }
@@ -75,7 +72,6 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
-        //MY NOTES: create a new arraylist of hashmaps
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
@@ -133,15 +129,10 @@ public class JobData {
 
     public static ArrayList<HashMap<String, String>> findByValue(String searchTerm) {
 
-        // load data, if not already loaded
-        //thinking this will populate allJobs for me to loop through
         loadData();
 
-        //results that match search term will be stored here
         ArrayList<HashMap<String, String>> jobsThatMatchSearchResults = new ArrayList<>();
 
-        //loop through allJobs
-        // look at values for a match with searchTerm
         for (HashMap<String, String> job : allJobs) {
 
             for (String value : job.values()) {
