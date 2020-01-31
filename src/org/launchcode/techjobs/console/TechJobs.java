@@ -69,6 +69,7 @@ public class TechJobs {
                     printJobs(JobData.findByValue(searchTerm));
 
 
+
                 } else {
                     ArrayList<HashMap<String, String>> searchResults = JobData.findByColumnAndValue(searchField, searchTerm);
 
